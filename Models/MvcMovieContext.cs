@@ -13,7 +13,8 @@ namespace ReactNet.Models
 
         public DbSet<Movie> Movie { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    => optionsBuilder.UseNpgsql("Host=my_host;Database=my_db;Username=my_user;Password=my_pw");
+    => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=PostgreSqlDemoDb;Username=postgres;Password=123");
+       
     }
 
     public class Movie
@@ -25,6 +26,7 @@ namespace ReactNet.Models
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
         public string Genre { get; set; }
+        //public string Note { get; set; }
 
     }
 }
